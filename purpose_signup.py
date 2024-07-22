@@ -1,8 +1,15 @@
+# Author: Caleb Miller
+# Friendly Reviewer: Judd Maltin
+# Innocent Onlooker: Madusa Rahimi
+
+import json
+
+
 def main_signup():
-    print("welcome to the purpose makerspace!")
+    print("Welcome to the Purpose Cooperative!")
     while True:
         workshop_choice = get_workshop_choice()
-        signup_info = get_info(workshop_choice)
+        print("You chose workshop ID number ", workshop_choice)
         confirm = input("Do you want to confirm your sign up? Press Y to confirm or N to cancel: ")
         if confirm == "Y" or confirm == "y":
             save_signup(signup_info)
@@ -17,19 +24,24 @@ def main_signup():
             print("good bye")
             break
 
-def read_options(file_name):
-    f = open(file_name)
-    unstripped = f.readlines()
-    result = []
-    for item in unstripped:
-        new_item = item.strip()
-        result.append(new_item)
-    return result
+def save_options_json(options):
+    pass
+    # write you code to write to the file "workshop_signups.json"
+    # here
+
+def read_options_json(file_name):
+    file_object = open(file_name, "r")
+    return json.load(file_object)
 
 def get_workshop_choice():
-    print("Wich workshop do you want to sign up for?")
+    print("Which workshop do you want to sign up for?")
 
-    answer = "workshop"
+    options = read_options_json("workshop_list.json")
+
+    for workshop in options["workshops"]:
+        print(workshop['id'], workshop['name'])
+
+    answer = input()
     return answer
 
 def get_info(workshop_choice):
@@ -37,6 +49,8 @@ def get_info(workshop_choice):
     return info
 
 def save_signup(signup_info):
+    # call the other function to save this data
+    # include, as json, the person's name, email, and the workshop ID
     return
 
 main_signup()

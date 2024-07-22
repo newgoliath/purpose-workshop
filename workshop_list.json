@@ -1,0 +1,38 @@
+{
+  "workshops": [
+    {
+      "id": 1,
+      "name": "Software Development",
+      "description": "Learn python!",
+      "date": "Mondays",
+      "host_id": 3
+    },
+    {
+      "id": 2,
+      "name": "3d Design",
+      "description": "Learn 3d Design!",
+      "date": "Sundays",
+      "host_id": 1,
+      "prerequisites": [
+        "Do you have a 3d printer?",
+        "Do you have a laptop?",
+        "Do you have previous design experience?"
+      ]
+    }
+  ],
+  "hosts": [
+    {
+      "id": 1,
+      "name": "Caleb Miller"
+    },
+    {
+      "id": 3,
+      "name": "Judd W. Maltin"
+    },
+    {
+      "id": 2,
+      "name": "Masuda Rahimi"
+    }
+  ]
+
+}
