@@ -36,7 +36,7 @@ def read_options_json(file_name):
 def get_workshop_choice():
     print("Which workshop do you want to sign up for?")
 
-    options = read_options_json("workshop_list.json")
+    options = read_options_json("../data/workshop_list.json")
 
     for workshop in options["workshops"]:
         print(workshop['id'], workshop['name'])
