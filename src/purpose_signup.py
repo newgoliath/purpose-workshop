@@ -46,8 +46,9 @@ def get_workshop_choice():
     return answer
 
 def get_signup_info(workshop_choice):
+    answer = {}
     print("What is your name?")
-    answer = input()
+    print(answer["name"])
     return answer
 
 def save_signup(signup_info):
