@@ -1,6 +1,6 @@
 # Author: Caleb Miller
 # Friendly Reviewer: Judd Maltin
-# Innocent Onlooker: Madusa Rahimi
+# Innocent Onlooker: Masuda Rahimi
 
 import json
 
@@ -10,6 +10,7 @@ def main_signup():
     while True:
         workshop_choice = get_workshop_choice()
         print("You chose workshop ID number ", workshop_choice)
+        signup_info = get_signup_info(workshop_choice)
         confirm = input("Do you want to confirm your sign up? Press Y to confirm or N to cancel: ")
         if confirm == "Y" or confirm == "y":
             save_signup(signup_info)
@@ -44,9 +45,9 @@ def get_workshop_choice():
     answer = input()
     return answer
 
-def get_info(workshop_choice):
-    info = {}
-    return info
+def get_signup_info(workshop_choice):
+    answer = {}
+    return answer
 
 def save_signup(signup_info):
     # call the other function to save this data
