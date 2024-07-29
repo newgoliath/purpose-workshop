@@ -48,6 +48,8 @@ def get_workshop_choice():
 def get_signup_info(workshop_choice):
     answer = {}
     print("What is your name?")
+    answer["name"] = input()
+    print("You told me:")
     print(answer["name"])
     return answer
 
