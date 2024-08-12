@@ -13,7 +13,7 @@ def main_signup():
         signup_info = get_signup_info(workshop_choice)
         confirm = input("Do you want to confirm your sign up? Press Y to confirm or N to cancel: ")
         if confirm == "Y" or confirm == "y":
-            save_signup(signup_info)
+            save_signup(signup_info, "saved_signups.json")
             print("Thank you for signing up for our", workshop_choice, "workshop!")
             confirm2 = input("would you like to sign up for onother workshop? Press Y to confirm or N to cancel: ")
             if confirm2 == "Y" or confirm2 == "y":
@@ -57,5 +57,15 @@ def save_signup(signup_info):
     # call the other function to save this data
     # include, as json, the person's name, email, and the workshop ID
     return
+
+def save_signup(signup_info, filename):
+    f = open(filename, "r")
+    saved_orders = json.load(f)
+    saved_orders.append(order)
+    f.close()
+    f = open(filename, "w")
+    json.dump(saved_orders, f, indent=4)
+    return
+
 
 main_signup()
