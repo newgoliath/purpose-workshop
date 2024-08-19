@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Hello {{ new_signup["name"] }}!</h1>
+
+<h2>Here is your signup:</h2>
+
+<p>Workshop: <strong>{{ new_signup["workshop"] }}</strong></p>
+
+<form action="/signup">
+<input type="submit" value="New signup" />
+</form>
+{% endblock %}

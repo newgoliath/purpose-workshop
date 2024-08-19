@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Welcome to the Purpose Cooperative</h1>
+
+<form action="/signup" method="post">
+    {% if error %}
+    <p><strong>{{error}}</strong></p>
+    {% endif %}
+
+    <input type="text" name="name" placeholder="ENTER NAME">
+    <select name="workshop">
+      <option value="">- Choose workshop -</option>
+      {% for d in workshops -%}
+      <option value="{{ d }}">{{ d | capitalize }}</option>
+      {% endfor %}
+    </select>
+
+    <input type="submit" value="Submit">
+</form>
+
+<img src=""
+ alt="Purpose Cooperative: Workshops" width="100%">
+Image by <a href="https://www.freepik.com/free-vector/
+take-away-coffee-coffee-mugs_8507631.htm">Freepik</a>
+
+{% endblock %}

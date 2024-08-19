@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Workshop</th>
+    </tr>
+    {% for s in signups -%}
+    <tr>
+        <td>{{ s['name'] }}</td>
+        <td>{{ s['workshop'] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
